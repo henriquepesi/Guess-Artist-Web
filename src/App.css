@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body,
+input,
+button {
+  font: 14px "Roboto", sans-serif;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.App {
+  background-color: #232932;
+  height: 100vh;
+}
