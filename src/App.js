@@ -1,12 +1,17 @@
 import React from "react";
 import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
 
-import Block from "./components/Block";
+import Header from "./components/Header";
+import Routes from "./routes";
 
 function App() {
   return (
     <div className="App">
-      <Block />
+      <Router>
+        <Header />
+        <Routes />
+      </Router>
     </div>
   );
 }
