@@ -14,19 +14,187 @@ const Questions = {
         image: Monet,
         options: [
           {
-            name: "Monet 1",
+            name: "Monet 0",
             right: false,
           },
           {
-            name: "Monet 2",
+            name: "Monet 0",
             right: true,
           },
           {
-            name: "Monet 3",
+            name: "Monet 0",
             right: false,
           },
           {
-            name: "Monet 4",
+            name: "Monet 0",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 1",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 1",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 1",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 1",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Cassatt,
+        options: [
+          {
+            name: "Mary Cassatt 2",
+            right: false,
+          },
+          {
+            name: "Mary Cassatt 2",
+            right: true,
+          },
+          {
+            name: "Mary Cassatt 2",
+            right: false,
+          },
+          {
+            name: "Mary Cassatt 2",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 3",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 3",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 3",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 3",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 4",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 4",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 4",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 4",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 5",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 5",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 5",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 5",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 6",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 6",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 6",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 6",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 7",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 7",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 7",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 7",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: Degas,
+        options: [
+          {
+            name: "Edgard Degas 8",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 8",
+            right: true,
+          },
+          {
+            name: "Edgard Degas 8",
+            right: false,
+          },
+          {
+            name: "Edgard Degas 8",
             right: false,
           },
         ],
@@ -48,27 +216,6 @@ const Questions = {
           },
           {
             name: "Edgard Degas 4",
-            right: false,
-          },
-        ],
-      },
-      {
-        image: Cassatt,
-        options: [
-          {
-            name: "Mary Cassatt",
-            right: false,
-          },
-          {
-            name: "Mary Cassatt",
-            right: true,
-          },
-          {
-            name: "Mary Cassatt",
-            right: false,
-          },
-          {
-            name: "Mary Cassatt",
             right: false,
           },
         ],
