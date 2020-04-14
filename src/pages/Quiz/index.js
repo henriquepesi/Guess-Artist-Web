@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import {
   Container,
@@ -14,18 +14,19 @@ import {
 } from "./styles";
 
 import { Questions } from "../../data/questions";
+import { useScore } from "../../context/Score";
 
 export default function Quiz() {
   const [select, setSelect] = useState(null);
   const [page, setPage] = useState(0);
   const [rightAnswers, setRightAnswer] = useState(0);
-  const [counter, setCounter] = useState(0);
   const [sequenceQuestions, setSequenceQuestions] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [index, setIndex] = useState(1);
+
+  const { score, setScore } = useScore();
 
   const { theme } = useParams();
   const quiz = Questions[theme];
-  console.log(quiz.questions.length);
 
   const handleSelect = (key, name) => {
     setSelect(key);
@@ -37,10 +38,11 @@ export default function Quiz() {
   };
 
   const handleNextPage = () => {
-    setCounter(rightAnswers + counter);
+    setScore(rightAnswers + score);
     setRightAnswer(0);
     setSelect(null);
-    setPage(sequenceQuestions[page + 1]);
+    setIndex(index + 1);
+    setPage(sequenceQuestions[index]);
   };
 
   // Generate Random Numbers
@@ -61,46 +63,52 @@ export default function Quiz() {
 
   useEffect(() => {
     const randomNumber = random(5, quiz.questions.length - 1);
-    setPage(randomNumber[0]);
     setSequenceQuestions(randomNumber);
-  }, [quiz.questions.length]);
+    setPage(randomNumber[0]);
+  }, []);
+
+  const navigate = useNavigate();
 
   return (
     <Container>
-      {loading === false ? (
-        <p>oi</p>
-      ) : (
-        <Box>
-          <BoxTop>
-            <Title>
-              {theme} {counter} {page}.
-            </Title>
-          </BoxTop>
-          <BoxContent>
-            <Image src={quiz.questions[page].image} />
-            <Options>
-              {quiz.questions[page].options.map((name, key) => (
-                <Option
-                  key={key}
-                  isRight={name.right}
-                  status={select === key ? 1 : 0}
-                  onClick={() => handleSelect(key, name)}
-                >
-                  {name.name}
-                </Option>
-              ))}
-              {page <= 2 ? (
-                <Button onClick={() => handleNextPage()} empty={select}>
-                  Next
-                </Button>
-              ) : (
-                <Button onClick={() => handleNextPage()} empty={select}>
-                  See Answers
-                </Button>
-              )}
-            </Options>
-          </BoxContent>
-        </Box>
+      <Box>
+        <BoxTop>
+          <Title>{theme} .</Title>
+        </BoxTop>
+        <BoxContent>
+          <Image src={quiz.questions[page].image} />
+          <Options>
+            {quiz.questions[page].options.map((name, key) => (
+              <Option
+                key={key}
+                isRight={name.right}
+                status={select === key ? 1 : 0}
+                onClick={() => handleSelect(key, name)}
+              >
+                {name.name}
+              </Option>
+            ))}
+            {index <= 4 && select === null ? (
+              <Button
+                disabled={true}
+                style={{ cursor: "not-allowed " }}
+                onClick={() => handleNextPage()}
+                empty={select}
+              >
+                Next
+              </Button>
+            ) : index > 4 ? (
+              <Button onClick={() => navigate("/score")} empty={select}>
+                See Answers
+              </Button>
+            ) : (
+              <Button onClick={() => handleNextPage()} empty={select}>
+                Next
+              </Button>
+            )}
+          </Options>
+        </BoxContent>
+      </Box>
       )}
     </Container>
   );

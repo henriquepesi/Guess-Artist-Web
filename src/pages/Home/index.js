@@ -7,37 +7,9 @@ import Block from "../../components/Block";
 
 import Cubism from "../../images/cubism.svg";
 
-export default function Home() {
-  const themes = [
-    {
-      slug: "impressionism",
-      title: "impressionism",
-      img: "huahus",
-    },
-    {
-      slug: "cubism",
-      title: "cubism",
-      img: "huahus",
-    },
-    {
-      slug: "pop-art",
-      title: "Pop Art",
-      img: "huahus",
-    },
-    {
-      title: "Surrealism",
-      img: "huahus",
-    },
-    {
-      title: "Pop Art",
-      img: "huahus",
-    },
-    {
-      title: "Surrealism",
-      img: "huahus",
-    },
-  ];
+import { Themes } from "../../data/questions";
 
+export default function Home() {
   const navigate = useNavigate();
 
   return (
@@ -45,10 +17,10 @@ export default function Home() {
       titulo={"oi"}
       content={
         <ContainerImage>
-          {themes.map((item) => (
-            <li onClick={() => navigate(`/quiz/${item.title}`)}>
+          {Themes.map((item) => (
+            <li onClick={() => navigate(`/quiz/${item.slug}`)}>
               <div>
-                <img src={Cubism} alt={item.title} />
+                <img src={item.img} alt={item.title} />
               </div>
               <span>{item.title}</span>
             </li>

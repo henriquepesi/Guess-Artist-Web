@@ -7,6 +7,8 @@ export const ContainerImage = styled.ul`
   justify-content: space-between;
   align-items: center;
   height: 240px;
+  width: 300px;
+  margin: 0 auto;
 
   div {
     background: #121417;
@@ -16,13 +18,22 @@ export const ContainerImage = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #33d664;
     cursor: pointer;
-    margin: 0 auto;
+    margin: 0 auto 0.5em;
+    transition: all 0.5s;
+  }
+
+  div:hover {
+    border: 1px solid #33d664;
+  }
+
+  span {
+    color: #8695a2;
   }
 
   li {
-    flex: 1 0 33%;
+    flex: 1 0 50%;
     text-align: center;
+    margin-bottom: 0.8em;
   }
 `;

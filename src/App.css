@@ -30,4 +30,6 @@ ul {
   position: absolute;
   left: 0;
   right: 0;
+  cursor: pointer;
+  width: 170px;
 }
