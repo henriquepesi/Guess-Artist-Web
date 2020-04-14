@@ -11,13 +11,16 @@ import medium from "../../images/score/medium.svg";
 import high from "../../images/score/high.svg";
 
 export default function Score() {
-  const { score } = useScore();
-  const navigate = useNavigate();
+  const { score, answers } = useScore();
+
   return (
     <Block
       titulo="Score ."
       content={
         <ContainerImage>
+          {answers.map((item) => (
+            <img src={item.img} alt={item.title} />
+          ))}
           {score <= 2 ? (
             <ContainerScore>
               <img src={low} alt="score" />
@@ -28,7 +31,7 @@ export default function Score() {
             <ContainerScore>
               <img src={medium} alt="score" />
               <h3>You scored {score}/5!</h3>
-              <span>Congratulations! You are almost a piece of art :D</span>
+              <span>Good job! Keep pairing Mx Picasso :D</span>
             </ContainerScore>
           ) : (
             <ContainerScore>
@@ -37,7 +40,7 @@ export default function Score() {
               <span>Congratulations! You are almost a piece of art :D</span>
             </ContainerScore>
           )}
-          <StyledLink to={"/"}>Back to home</StyledLink>
+          <StyledLink to={"/"}>Back to Home</StyledLink>
         </ContainerImage>
       }
     />

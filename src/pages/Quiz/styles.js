@@ -30,6 +30,7 @@ export const Title = styled.h3`
   font-size: 2.2em;
   color: #1a1f28;
   font-weight: 500;
+  text-transform: capitalize;
 `;
 
 export const BoxContent = styled.div`
@@ -47,32 +48,6 @@ export const Options = styled.ul`
   padding-left: 2em;
   list-style: none;
   flex: 1;
-
-  /* li {
-    color: ${(props) => (props.status === 0 ? "#fff" : "#33d664")};
-    opacity: ${(props) => (props.available ? 0.6 : 1)};
-    background: ${(props) => (props.status ? "#33d664" : "transparent")};
-    border: 1px solid #33d664;
-    border-radius: 15px;
-    padding: 0.8em 1em 0.8em 2.5em;
-    font-size: 0.8em;
-    position: relative;
-  }
-
-  li:before {
-    content: "";
-    height: 10px;
-    width: 10px;
-    background: #33d664;
-    position: absolute;
-    border-radius: 50%;
-    left: 11px;
-    top: 11px;
-  }
-
-  li + li {
-    margin-top: 1em;
-  } */
 `;
 
 export const Option = styled.li`

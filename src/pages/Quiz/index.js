@@ -22,15 +22,17 @@ export default function Quiz() {
   const [rightAnswers, setRightAnswer] = useState(0);
   const [sequenceQuestions, setSequenceQuestions] = useState([]);
   const [index, setIndex] = useState(1);
+  const [imageSelect, setImageSelect] = useState("");
 
-  const { score, setScore } = useScore();
+  const { score, setScore, answers, setAnswers } = useScore();
 
+  console.log(answers);
   const { theme } = useParams();
   const quiz = Questions[theme];
 
-  const handleSelect = (key, name) => {
+  const handleSelect = (key, item) => {
     setSelect(key);
-    if (name.right) {
+    if (item.right) {
       setRightAnswer(rightAnswers + 1);
     } else {
       setRightAnswer(0);
@@ -43,14 +45,13 @@ export default function Quiz() {
     setSelect(null);
     setIndex(index + 1);
     setPage(sequenceQuestions[index]);
+    // setAnswers([...answers, { img: quiz.questions[page].image }]);
   };
 
-  // Generate Random Numbers
-
-  // const randomArray = (length, max) =>
-  //   Array(length)
-  //     .fill()
-  //     .map(() => Math.round(Math.random() * max));
+  const handleSeeAnswers = () => {
+    setScore(rightAnswers + score);
+    navigate("/score");
+  };
 
   const random = (num, length) => {
     var arr = [];
@@ -78,14 +79,14 @@ export default function Quiz() {
         <BoxContent>
           <Image src={quiz.questions[page].image} />
           <Options>
-            {quiz.questions[page].options.map((name, key) => (
+            {quiz.questions[page].options.map((item, key) => (
               <Option
                 key={key}
-                isRight={name.right}
+                isRight={item.right}
                 status={select === key ? 1 : 0}
-                onClick={() => handleSelect(key, name)}
+                onClick={() => handleSelect(key, item)}
               >
-                {name.name}
+                {item.name}
               </Option>
             ))}
             {index <= 4 && select === null ? (
@@ -97,8 +98,8 @@ export default function Quiz() {
               >
                 Next
               </Button>
-            ) : index > 4 ? (
-              <Button onClick={() => navigate("/score")} empty={select}>
+            ) : index > 4 && select !== null ? (
+              <Button onClick={() => handleSeeAnswers()} empty={select}>
                 See Answers
               </Button>
             ) : (

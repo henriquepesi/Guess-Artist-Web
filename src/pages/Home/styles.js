@@ -31,9 +31,17 @@ export const ContainerImage = styled.ul`
     color: #8695a2;
   }
 
-  li {
+  /* li {
     flex: 1 0 50%;
     text-align: center;
     margin-bottom: 0.8em;
-  }
+  } */
+`;
+
+export const ContainerItem = styled.li`
+  flex: 1 0 50%;
+  text-align: center;
+  margin-bottom: 0.8em;
+  opacity: ${(props) => (props.status ? 1 : 0.2)};
+  cursor: ${(props) => (props.status ? "pointer" : "not-allowed")};
 `;

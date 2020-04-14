@@ -35,16 +35,19 @@ import RemediosVaro2 from "../images/remedios-varo-2.jpg";
 import ReneMagritte from "../images/rene-magritte.jpg";
 import SalvadorDali from "../images/salvador-dali.jpg";
 
-// Salvador Dalí
-// René Magritte
-// Frida Kahlo
-// Joan Miró
-// Max Ernst
-// Paul Delvaux
-// Remedios Varo
-// Leonor Fini
-// Alberto Giacometti
-// Vito Campanella
+// POP ART
+import AndyWarhol from "../images/pop-art/andy-warhol.jpg";
+import RoyLichtenstein from "../images/pop-art/roy-lichtenstein.jpg";
+import RoyLichtenstein2 from "../images/pop-art/roy-lichtenstein-2.jpg";
+import DavidHockney from "../images/pop-art/david-hockney.jpg";
+import RichardHamilton from "../images/pop-art/richard-hamilton.jpg";
+import KeithHaring from "../images/pop-art/keith-haring.jpg";
+import DavidHockney2 from "../images/pop-art/david-hockney-2.jpg";
+import PeterBlake from "../images/pop-art/peter-blake.jpg";
+import WayneThiebaud from "../images/pop-art/wayne-thiebaud.jpg";
+import WayneThiebaud2 from "../images/pop-art/wayne-thiebaud-2.jpg";
+import JasperJohns from "../images/pop-art/jasper-johns.jpg";
+import JasperJohns2 from "../images/pop-art/jasper-johns-2.jpg";
 
 const Questions = {
   impressionism: {
@@ -561,28 +564,290 @@ const Questions = {
       },
     ],
   },
+  popart: {
+    title: "Pop Art",
+    questions: [
+      {
+        image: AndyWarhol,
+        options: [
+          {
+            name: "Jasper Johns",
+            right: false,
+          },
+          {
+            name: "Andy Warhol",
+            right: true,
+          },
+          {
+            name: "Wayne Thiebaud",
+            right: false,
+          },
+          {
+            name: "Peter Blake",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: RoyLichtenstein,
+        options: [
+          {
+            name: "Roy Lichtenstein",
+            right: true,
+          },
+          {
+            name: "Keith Haring",
+            right: false,
+          },
+          {
+            name: "Peter Blake",
+            right: false,
+          },
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: RoyLichtenstein2,
+        options: [
+          {
+            name: "Vincent van Gogh",
+            right: false,
+          },
+          {
+            name: "Alfred Sisley",
+            right: true,
+          },
+          {
+            name: "Edouard Manet",
+            right: false,
+          },
+          {
+            name: "Paul Cézanne",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: DavidHockney,
+        options: [
+          {
+            name: "Richard Hamilton",
+            right: false,
+          },
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+          {
+            name: "Andy Warhol",
+            right: false,
+          },
+          {
+            name: "David Hockney",
+            right: true,
+          },
+        ],
+      },
+      {
+        image: RichardHamilton,
+        options: [
+          {
+            name: "David Hockney",
+            right: false,
+          },
+          {
+            name: "Jasper Johns",
+            right: false,
+          },
+          {
+            name: "Richard Hamilton",
+            right: true,
+          },
+          {
+            name: "Andy Warhol",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: KeithHaring,
+        options: [
+          {
+            name: "Keith Haring",
+            right: true,
+          },
+          {
+            name: "Roy Lichtenstein",
+            right: false,
+          },
+          {
+            name: "Wayne Thiebaud",
+            right: false,
+          },
+          {
+            name: "Wayne Thiebaud",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: DavidHockney2,
+        options: [
+          {
+            name: "David Hockney",
+            right: true,
+          },
+          {
+            name: "Richard Hamilton",
+            right: false,
+          },
+          {
+            name: "Keith Haring",
+            right: false,
+          },
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: PeterBlake,
+        options: [
+          {
+            name: "Richard Hamilton",
+            right: false,
+          },
+          {
+            name: "Peter Blake",
+            right: true,
+          },
+          {
+            name: "Roy Lichtenstein",
+            right: false,
+          },
+          {
+            name: "Andy Warhol",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: WayneThiebaud,
+        options: [
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+          {
+            name: "Wayne Thiebaud",
+            right: true,
+          },
+          {
+            name: "Richard Hamilton",
+            right: false,
+          },
+          {
+            name: "Andy Warhol",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: WayneThiebaud2,
+        options: [
+          {
+            name: "Jasper Johns",
+            right: false,
+          },
+          {
+            name: "Peter Blake",
+            right: false,
+          },
+          {
+            name: "Wayne Thiebaud",
+            right: true,
+          },
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: JasperJohns,
+        options: [
+          {
+            name: "Jasper Johns",
+            right: true,
+          },
+          {
+            name: "David Hockney",
+            right: false,
+          },
+
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+          {
+            name: "Wayne Thiebaud",
+            right: false,
+          },
+        ],
+      },
+      {
+        image: JasperJohns2,
+        options: [
+          {
+            name: "Jasper Johns",
+            right: true,
+          },
+          {
+            name: "Claes Oldenburg",
+            right: false,
+          },
+          {
+            name: "David Hockney",
+            right: false,
+          },
+          {
+            name: "Jasper Johns",
+            right: true,
+          },
+        ],
+      },
+    ],
+  },
 };
 
 const Themes = [
   {
-    slug: "impressionism",
-    title: "impressionism",
-    img: Impressionism,
-  },
-  {
-    slug: "cubism",
-    title: "cubism",
-    img: Cubism,
-  },
-  {
-    slug: "pop-art",
-    title: "Pop Art",
-    img: PopArt,
-  },
-  {
     slug: "surrealism",
     title: "Surrealism",
     img: Surrealism,
+    status: true,
+  },
+  {
+    slug: "impressionism",
+    title: "impressionism",
+    img: Impressionism,
+    status: true,
+  },
+  {
+    slug: "popart",
+    title: "Pop Art",
+    img: PopArt,
+    status: true,
+  },
+  {
+    slug: "cubism",
+    title: "Cubism",
+    img: Cubism,
+    status: false,
   },
 ];
 

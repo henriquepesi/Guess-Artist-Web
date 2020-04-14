@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import { ContainerImage } from "./styles";
+import { ContainerImage, ContainerItem } from "./styles";
 
 import Block from "../../components/Block";
 
@@ -14,16 +14,19 @@ export default function Home() {
 
   return (
     <Block
-      titulo={"oi"}
+      titulo={"Hey Artist !"}
       content={
         <ContainerImage>
           {Themes.map((item) => (
-            <li onClick={() => navigate(`/quiz/${item.slug}`)}>
+            <ContainerItem
+              status={item.status}
+              onClick={() => navigate(`/quiz/${item.slug}`)}
+            >
               <div>
                 <img src={item.img} alt={item.title} />
               </div>
               <span>{item.title}</span>
-            </li>
+            </ContainerItem>
           ))}
         </ContainerImage>
       }
