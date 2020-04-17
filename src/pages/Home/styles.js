@@ -44,4 +44,5 @@ export const ContainerItem = styled.li`
   margin-bottom: 0.8em;
   opacity: ${(props) => (props.status ? 1 : 0.2)};
   cursor: ${(props) => (props.status ? "pointer" : "not-allowed")};
+  pointer-events: ${(props) => (props.status ? "initial" : "none")};
 `;

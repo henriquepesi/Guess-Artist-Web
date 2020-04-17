@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import {
@@ -17,18 +17,28 @@ import { Questions } from "../../data/questions";
 import { useScore } from "../../context/Score";
 
 export default function Quiz() {
-  const [select, setSelect] = useState(null);
-  const [page, setPage] = useState(0);
-  const [rightAnswers, setRightAnswer] = useState(0);
-  const [sequenceQuestions, setSequenceQuestions] = useState([]);
-  const [index, setIndex] = useState(1);
-  const [imageSelect, setImageSelect] = useState("");
+  const random = (num, length) => {
+    var arr = [];
+    while (arr.length < num) {
+      var r = Math.floor(Math.random() * length) + 1;
+      if (arr.indexOf(r) === -1) arr.push(r);
+    }
+    return arr;
+  };
 
-  const { score, setScore, answers, setAnswers } = useScore();
-
-  console.log(answers);
   const { theme } = useParams();
   const quiz = Questions[theme];
+
+  const randomNumber = random(5, quiz.questions.length - 1);
+
+  const [sequenceQuestions] = useState(randomNumber);
+  const [page, setPage] = useState(randomNumber[0]);
+  const [index, setIndex] = useState(1);
+
+  const [rightAnswers, setRightAnswer] = useState(0);
+  const [select, setSelect] = useState(null);
+
+  const { score, setScore } = useScore();
 
   const handleSelect = (key, item) => {
     setSelect(key);
@@ -45,28 +55,12 @@ export default function Quiz() {
     setSelect(null);
     setIndex(index + 1);
     setPage(sequenceQuestions[index]);
-    // setAnswers([...answers, { img: quiz.questions[page].image }]);
   };
 
   const handleSeeAnswers = () => {
     setScore(rightAnswers + score);
     navigate("/score");
   };
-
-  const random = (num, length) => {
-    var arr = [];
-    while (arr.length < num) {
-      var r = Math.floor(Math.random() * length) + 1;
-      if (arr.indexOf(r) === -1) arr.push(r);
-    }
-    return arr;
-  };
-
-  useEffect(() => {
-    const randomNumber = random(5, quiz.questions.length - 1);
-    setSequenceQuestions(randomNumber);
-    setPage(randomNumber[0]);
-  }, []);
 
   const navigate = useNavigate();
 
@@ -77,6 +71,7 @@ export default function Quiz() {
           <Title>{theme} .</Title>
         </BoxTop>
         <BoxContent>
+          {}
           <Image src={quiz.questions[page].image} />
           <Options>
             {quiz.questions[page].options.map((item, key) => (

@@ -17,8 +17,9 @@ export default function Home() {
       titulo={"Hey Artist !"}
       content={
         <ContainerImage>
-          {Themes.map((item) => (
+          {Themes.map((item, i) => (
             <ContainerItem
+              key={i}
               status={item.status}
               onClick={() => navigate(`/quiz/${item.slug}`)}
             >

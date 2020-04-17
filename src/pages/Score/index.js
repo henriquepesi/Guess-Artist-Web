@@ -25,13 +25,13 @@ export default function Score() {
             <ContainerScore>
               <img src={low} alt="score" />
               <h3>You scored {score}/5!</h3>
-              <span>Hm, Look on the bright side you seems a nice person!</span>
+              <span>Hm, Look on the bright side you seem a nice person!</span>
             </ContainerScore>
           ) : score === 3 ? (
             <ContainerScore>
               <img src={medium} alt="score" />
               <h3>You scored {score}/5!</h3>
-              <span>Good job! Keep pairing Mx Picasso :D</span>
+              <span>Good job! Keep painting Mx Picasso :D</span>
             </ContainerScore>
           ) : (
             <ContainerScore>

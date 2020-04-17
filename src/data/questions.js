@@ -149,7 +149,7 @@ const Questions = {
             right: true,
           },
           {
-            name: "EAuguste Renoir",
+            name: "Auguste Renoir",
             right: false,
           },
           {
